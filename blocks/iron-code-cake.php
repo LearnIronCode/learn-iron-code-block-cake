@@ -61,7 +61,8 @@ function iron_code_cake_block_init() {
 
 		/**
 		 * Attributes are the editable variables in our block.
-		 * Here we create one attribute called "message" (we could use any name here).
+		 * Here we create two attributes called "message" and "name" (we could
+		 * use any names here).
 		 *
 		 * When the editor is loaded, the attributes are populated by parsing the
 		 * block as it is stored in the database and extracting the values.

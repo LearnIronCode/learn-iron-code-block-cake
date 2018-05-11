@@ -57,19 +57,44 @@
 				props.setAttributes( { message: newMessage } );
 			}
 
+			function onChangeName( newName ) {
+				props.setAttributes( { name: newName } );
+			}
+
 			/**
 			 * Render our block for the editor using our message attribute.
 			 *
 			 * Additionally, assign an onChange function for updating the attribute.
 			 */
 			return el(
-				TextControl,
+				'div',
 				{
 					className: props.className,
-					onChange: onChangeMessage,
-					placeholder: __('Your message, e.g. Happy Birthday'),
-					value: props.attributes.message
-				}
+				},
+				[
+					el(
+						TextControl,
+						{
+							className: 'message',
+							label: __('Message above cake.'),
+							maxlength: 16,
+							onChange: onChangeMessage,
+							placeholder: __('Your message, e.g. Happy Birthday'),
+							value: props.attributes.message
+						}
+					),
+					el(
+						TextControl,
+						{
+							className: 'name',
+							label: __('Name on cake.'),
+							maxlength: 20,
+							onChange: onChangeName,
+							placeholder: __('Name here'),
+							value: props.attributes.name
+						}
+					)
+				]
 			);
 		},
 
@@ -83,9 +108,22 @@
 		 */
 		save: function( props ) {
 			return el(
-				'p',
+				'div',
 				{},
-				props.attributes.message
+				[
+					el(
+						'h3',
+						{},
+						props.attributes.message
+					),
+					el(
+						'p',
+						{
+							className: 'name'
+						},
+						props.attributes.name
+					)
+				]
 			);
 		}
 	} );

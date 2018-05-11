@@ -4,5 +4,180 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 .wp-block-learn-iron-code-block-cake-iron-code-cake {
+	background-color: #8751ad;
+    margin: 0 0 40px;
+    padding: 0 0 20px;
+    display: block;
+}
+h3.message {
+	font-family: sans-serif;
+}
+h3.message:first-child {
+	color: #fff;
+	font-size: 3rem;
+	padding-top: 1rem;
+	text-align: center;
+}
+.edit-post-visual-editor p.name,
+p.name {
+	font-family: 'Pacifico', cursive;
+	font-size: 2.5rem;
+	line-height: 4rem;
+	text-align: center;
+	margin: 0;
+	color: #d7167d;
+	width: 100%;
+}
+
+.flame {
+	position: relative;
+	width: .3rem;
+	height: 1.5rem;
+	margin: 0 auto;
+	background: radial-gradient(circle, rgba(250,246,250,1) 0%, rgba(255,221,4,1) 0%, rgba(255,145,5,1) 100%, rgba(215,22,125,1) 100%);
+	border-radius: 6px 10px 0 0 ;
+}
+
+.candle {
+    position: relative;
+		width: .5rem;
+		height: 4rem;
+    margin: 0 auto;
+    background: #28baef;
+    border-radius: 2px 2px 0 0 ;
+}
+
+.layer-top {
+    position: relative;
+		width: 20rem;
+		height: 5rem;
+    margin: 0 auto;
+    background: #ffd878;
+		border-bottom: .05rem solid #e8bb4c;
+}
+
+.icing {
+		background: #fff;
+		position: relative;
+		width: 20rem;
+		height: 1rem;
+    margin: 0 auto;
+		border-radius: 4px 4px 0 0 ;
+}
+
+.icing:before {
+	content: "";
+	background: radial-gradient(
+		transparent 0px,
+		transparent 4px,
+		white 4px,
+		white
+	);
+  background-size: 11px 12px;
+  background-position: -6px -8px;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: -3px;
+  left: 0;
+}
+
+.icing-middle {
+		background: #fff;
+		position: relative;
+		width: 25rem;
+		height: 1rem;
+    margin: 0 auto;
+		border-radius: 4px 4px 0 0 ;
+}
+
+.icing-middle:before {
+	content: "";
+	background: radial-gradient(
+		transparent 0px,
+		transparent 4px,
+		white 4px,
+		white
+	);
+  background-size: 11px 12px;
+  background-position: -6px -8px;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: -3px;
+  left: 0;
+}
+
+.piping-middle {
+		background: pink;
+		position: relative;
+		margin: 0 auto;
+		width: 25rem;
+		height: 1rem;
+}
+
+.layer-middle {
+    position: relative;
+		width: 25rem;
+		height: 5rem;
+    margin: 0 auto;
+    background: #ffd366;
+		border-bottom: .05rem solid #e8bb4c;
+}
+.layer-middle icing{
+		width: 30rem;
+}
+
+.icing-bottom {
+		background: #fff;
+		position: relative;
+		width: 30rem;
+		height: 1.5rem;
+    margin: 0 auto;
+		border-radius: 4px 4px 0 0 ;
+}
+
+.icing-bottom:before {
+	content: "";layer-shadow
+	background: radial-gradient(
+		transparent 0px,
+		transparent 4px,
+		white 4px,
+		white
+	);
+  background-size: 11px 12px;
+  background-position: -6px -8px;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: -3px;
+  left: 0;
+}
+
+.piping-bottom {
+		background: pink;
+		height: 1rem;
+		width: 30rem;
+		margin: 0 auto;
+}
+
+.layer-bottom {
+    position: relative;
+	width: 30rem;
+	height: 8rem;
+    margin: 0 auto 20px;
+    background: #ffcf56;
+}
+
+.layer-bottom:after {
+    content:"";
+    position:absolute;
+    width:100%;
+    bottom:1px;
+    z-index:-1;
+    transform:scale(1);
+    box-shadow: 0px 0px 8px 2px #000000;
 }

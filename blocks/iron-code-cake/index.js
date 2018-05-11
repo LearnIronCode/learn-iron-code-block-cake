@@ -97,7 +97,6 @@
 				]
 			);
 		},
-
 		/**
 		 * The save function defines the way in which the different attributes should be combined
 		 * into the final markup, which is then serialized by Gutenberg into `post_content`.
@@ -107,22 +106,27 @@
 		 * @return {Element}       Element to render.
 		 */
 		save: function( props ) {
+
 			return el(
 				'div',
-				{},
+				{
+					className: props.className,
+				},
 				[
-					el(
-						'h3',
-						{},
-						props.attributes.message
+					el( 'h3', { className: 'message' }, props.attributes.message ),
+					el( 'div', { className: 'flame' } ),
+					el( 'div', { className: 'candle' } ),
+					el( 'div', { className: 'layer-top' },
+						el( 'div', { className: 'icing' } ),
 					),
-					el(
-						'p',
-						{
-							className: 'name'
-						},
-						props.attributes.name
-					)
+					el( 'div', { className: 'icing-middle' } ),
+					el( 'div', { className: 'piping-middle' } ),
+					el( 'div', { className: 'layer-middle' },
+						el( 'p', { className: 'name' }, props.attributes.name )
+					),
+					el( 'div', { className: 'icing-bottom' } ),
+					el( 'div', { className: 'piping-bottom' } ),
+					el( 'div', { className: 'layer-bottom' } )
 				]
 			);
 		}

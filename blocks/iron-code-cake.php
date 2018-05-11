@@ -13,6 +13,13 @@
  * @see https://wordpress.org/gutenberg/handbook/blocks/writing-your-first-block-type/#enqueuing-block-scripts
  */
 function iron_code_cake_block_init() {
+
+	// Until Gutenberg is merged into WordPress core, register_block_type()
+	// will only exist when the Gutenberg plugin is installed and activated.
+	if ( ! function_exists( 'register_block_type' ) ) {
+		return;
+	}
+
 	$dir = dirname( __FILE__ );
 
 	$index_js = 'iron-code-cake/index.js';

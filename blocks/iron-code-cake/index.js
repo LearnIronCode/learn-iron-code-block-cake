@@ -7,8 +7,12 @@
 	/**
 	 * Returns a new element of given type. Element is an abstraction layer atop React.
 	 * @see https://github.com/WordPress/gutenberg/tree/master/element#element
+	 *
+	 * TextControl Renders a text input field.
+	 * @see https://github.com/WordPress/gutenberg/blob/master/components/text-control
 	 */
-	var el = wp.element.createElement;
+	var el = wp.element.createElement,
+		TextControl = wp.components.TextControl;
 	/**
 	 * Retrieves the translation of text.
 	 * @see https://github.com/WordPress/gutenberg/tree/master/i18n#api
@@ -39,7 +43,6 @@
 			// Removes support for an HTML mode.
 			html: false,
 		},
-
 		/**
 		 * The edit function describes the structure of your block in the context of the editor.
 		 * This represents what the editor will render when the block is used.
@@ -49,10 +52,24 @@
 		 * @return {Element}       Element to render.
 		 */
 		edit: function( props ) {
+
+			function onChangeMessage( newMessage ) {
+				props.setAttributes( { message: newMessage } );
+			}
+
+			/**
+			 * Render our block for the editor using our message attribute.
+			 *
+			 * Additionally, assign an onChange function for updating the attribute.
+			 */
 			return el(
-				'p',
-				{ className: props.className },
-				__( 'Hello from the editor!' )
+				TextControl,
+				{
+					className: props.className,
+					onChange: onChangeMessage,
+					placeholder: __('Your message, e.g. Happy Birthday'),
+					value: props.attributes.message
+				}
 			);
 		},
 
@@ -61,13 +78,14 @@
 		 * into the final markup, which is then serialized by Gutenberg into `post_content`.
 		 * @see https://wordpress.org/gutenberg/handbook/block-edit-save/#save
 		 *
+		 * @param {Object} [props] Properties passed from the editor.
 		 * @return {Element}       Element to render.
 		 */
-		save: function() {
+		save: function( props ) {
 			return el(
 				'p',
 				{},
-				__( 'Hello from the saved content!' )
+				props.attributes.message
 			);
 		}
 	} );

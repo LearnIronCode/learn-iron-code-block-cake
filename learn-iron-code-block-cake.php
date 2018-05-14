@@ -18,3 +18,28 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 include( plugin_dir_path( __FILE__ ) . 'blocks/iron-code-cake.php' );
+
+add_action( 'wp_enqueue_scripts', 'iron_code_cake_block_enqueue_front_end_js' );
+add_action( 'init', 'iron_code_cake_block_register_js' );
+
+function iron_code_cake_block_register_js() {
+	wp_register_script(
+		'arctext',
+		plugins_url( 'js/vendor/jquery.arctext.1.0.js', __FILE__ ),
+		array( 'jquery' )
+	);
+	wp_register_script(
+		'iron-code-cake-block-front-end',
+		plugins_url( 'js/arctext-cake.js', __FILE__ ),
+		array( 'jquery', 'arctext' )
+	);
+}
+
+function iron_code_cake_block_enqueue_front_end_js() {
+	// Enqueue JavaScript on the front-end.
+	if ( is_admin() ) {
+		// We are on the back-end, do NOT enqueue JavaScript.
+		return;
+	}
+	wp_enqueue_script( 'iron-code-cake-block-front-end' );
+}

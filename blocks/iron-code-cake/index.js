@@ -31,6 +31,12 @@
 		title: __( 'Iron Code Cake' ),
 
 		/**
+		 * Add dashicon icon in Gutenberg block selector.
+		 * @see https://developer.wordpress.org/resource/dashicons/#welcome-learn-more
+		 */
+		icon: 'nametag',
+
+		/**
 		 * Blocks are grouped into categories to help users browse and discover them.
 		 * The categories provided by core are `common`, `embed`, `formatting`, `layout` and `widgets`.
 		 */

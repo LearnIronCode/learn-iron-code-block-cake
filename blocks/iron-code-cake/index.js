@@ -72,6 +72,30 @@
 			 *
 			 * Additionally, assign an onChange function for updating the attribute.
 			 */
+			if ( false === props.isSelected ) {
+				return el(
+					'div',
+					{
+						className: props.className,
+					},
+					[
+						el( 'h3', { className: 'message' }, props.attributes.message ),
+						el( 'div', { className: 'flame' } ),
+						el( 'div', { className: 'candle' } ),
+						el( 'div', { className: 'layer-top' },
+							el( 'div', { className: 'icing' } ),
+						),
+						el( 'div', { className: 'icing-middle' } ),
+						el( 'div', { className: 'piping-middle' } ),
+						el( 'div', { className: 'layer-middle' },
+							el( 'p', { className: 'name' }, props.attributes.name )
+						),
+						el( 'div', { className: 'icing-bottom' } ),
+						el( 'div', { className: 'piping-bottom' } ),
+						el( 'div', { className: 'layer-bottom' } )
+					]
+				);
+			}
 			return el(
 				'div',
 				{

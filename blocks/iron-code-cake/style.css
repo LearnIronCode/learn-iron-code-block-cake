@@ -12,6 +12,14 @@
     padding: 0 0 20px;
     display: block;
 }
+.wp-block-learn-iron-code-block-cake-iron-code-cake label {
+	color: #fff;
+	padding: 25px 10px 10px;
+}
+.wp-block-learn-iron-code-block-cake-iron-code-cake input {
+	margin: 0 10px;
+	width: 80%;
+}
 h3.message {
 	font-family: sans-serif;
 }
